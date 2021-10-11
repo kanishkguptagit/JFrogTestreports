@@ -1,0 +1,20 @@
+resources:
+     - name: myRepo
+       type: GitRepo
+       configuration:
+         gitProvider: s_gitHub
+         path: abhishekk012/testelement
+         branches:
+           include: main
+
+   pipelines:
+     - name: TestElement
+       steps:
+         - name: TestElement_1
+           type: Bash
+           configuration:
+             inputResources:
+               - name: myRepo
+           execution:
+             onExecute:
+               - save_tests "$res_myRepo_resourcePath/tests/junit/test_results_example_1.xml" 
