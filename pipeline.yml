@@ -1,5 +1,5 @@
 resources:
-  - name: myRepoRes
+  - name: myRepoResource
     type: GitRepo
     configuration:
       gitProvider: s_gitHub
@@ -9,11 +9,11 @@ resources:
 pipelines:
   - name: TestElement
     steps:
-      - name: TestElement_Step
+      - name: TestElement_Step_first
         type: Bash
         configuration:
           inputResources:
-            - name: myRepoRes
+            - name: myRepoResource
         execution:
           onExecute:
             - >-
