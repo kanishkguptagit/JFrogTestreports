@@ -9,7 +9,7 @@ resources:
 pipelines:
   - name: TestElement
     steps:
-      - name: TestElement_Step_First
+      - name: TestElement_Step_First_1
         type: Bash
         configuration:
           inputResources:
