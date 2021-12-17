@@ -5,17 +5,15 @@ resources:
       gitProvider: s_gitHub
       path: abhishekk012/testelement
       branches:
-        include: main
+        include: master
 pipelines:
   - name: TestElement
     steps:
-      - name: TestElement_Step_first
+      - name: TestElement_1
         type: Bash
         configuration:
           inputResources:
             - name: myRepoResource
         execution:
           onExecute:
-            - >-
-              save_tests
-              "$res_myRepo_resourcePath/tests/junit/test_results_example_1.xml"
+            - save_tests "$res_myRepo_resourcePath/tests/junit/test_results_example_1.xml"
