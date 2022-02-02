@@ -1,129 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
       <testsuites>
-          <testsuite name="Apix Cache Unit Tests" tests="65" assertions="115" failures="0" errors="0" time="0.440908">
-              <testsuite name="Apix\Cache\ApcTest" file="ApcTest.php" tests="17" assertions="52" failures="0" errors="0" time="0.171252">
-                  <testcase name="testComplyWithApc" class="Apix\Cache\ApcTest" file="ApcTest.php" line="48" assertions="2" time="0.04"/>
-                  <testcase name="testDeleteInexistantReturnsFalse" class="Apix\Cache\ApcTest" file="ApcTest.php" line="130" assertions="1" time="0.05"/>
+          <testsuite class="Apix Cache Unit Tests" tests="65" assertions="115" failures="0" errors="0" time="0.440908">
+              <testsuite class="Apix\Cache\ApcTest" file="ApcTest.php" tests="17" assertions="52" failures="0" errors="0" time="0.171252">
+                  <testcase class="testComplyWithApc" class="Apix\Cache\ApcTest" file="ApcTest.php" line="48" assertions="2" time="0.04"/>
+                  <testcase class="testDeleteInexistantReturnsFalse" class="Apix\Cache\ApcTest" file="ApcTest.php" line="130" assertions="1" time="0.05"/>
               </testsuite>
-              <testsuite name="Apix\Cache\Serializer\IgbinaryTest" file="IgbinaryTest.php" tests="0" assertions="0" failures="0" errors="0" time="0.000000">
-                  <testsuite name="Apix\Cache\Serializer\IgbinaryTest::testSerialize" tests="0" assertions="0" failures="0" errors="0" time="0.000000">
-                      <testcase name="skippedtestCase" time="0.02">
+              <testsuite class="Apix\Cache\Serializer\IgbinaryTest" file="IgbinaryTest.php" tests="0" assertions="0" failures="0" errors="0" time="0.000000">
+                  <testsuite class="Apix\Cache\Serializer\IgbinaryTest::testSerialize" tests="0" assertions="0" failures="0" errors="0" time="0.000000">
+                      <testcase class="skippedtestCase" time="0.02">
                           <skipped/>
                       </testcase>
                   </testsuite>
-                  <testsuite name="Apix\Cache\Serializer\IgbinaryTest::testIsSerialized" tests="0" assertions="0" failures="0" errors="0" time="0.000000"/>
+                  <testsuite class="Apix\Cache\Serializer\IgbinaryTest::testIsSerialized" tests="0" assertions="0" failures="0" errors="0" time="0.000000"/>
               </testsuite>
-              <testsuite name="Apix\Cache\Serializer\JsonTest" file="/home/pipelines/workspace/src/github.com/vidyar/apix-cache/src/tests/Apix/Cache/Serializer/JsonTest.php" tests="12" assertions="16" failures="0" errors="0" time="0.059918">
-                  <testsuite name="Apix\Cache\Serializer\JsonTest::testSerialize" tests="50" assertions="4" failures="0" errors="0" time="0.024535">
-                      <testcase name="testSerialize with data set #1" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #2" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #3" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #4" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #5" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #6" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #7" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #8" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #9" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #10" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #11" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #12" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #13" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #14" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #15" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #16" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #17" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #18" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #19" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #20" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #21" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #22" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #23" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #24" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #25" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #26" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #27" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #28" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #29" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #30" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #31" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #32" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #33" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #34" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #35" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #36" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #37" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #38" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #39" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #40" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #41" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #42" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #43" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #44" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #45" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #46" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #47" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #48" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #49" assertions="1" time="0.07" />
-                      <testcase name="testSerialize with data set #50" assertions="1" time="0.07" />
+              <testsuite class="Apix\Cache\Serializer\JsonTest" file="/home/pipelines/workspace/src/github.com/vidyar/apix-cache/src/tests/Apix/Cache/Serializer/JsonTest.php" tests="12" assertions="16" failures="0" errors="0" time="0.059918">
+                  <testsuite class="Apix\Cache\Serializer\JsonTest::testSerialize" tests="50" assertions="4" failures="0" errors="0" time="0.024535">
+                      <testcase class="testSerialize with data set #1" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #2" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #3" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #4" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #5" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #6" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #7" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #8" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #9" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #10" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #11" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #12" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #13" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #14" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #15" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #16" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #17" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #18" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #19" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #20" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #21" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #22" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #23" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #24" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #25" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #26" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #27" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #28" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #29" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #30" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #31" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #32" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #33" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #34" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #35" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #36" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #37" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #38" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #39" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #40" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #41" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #42" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #43" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #44" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #45" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #46" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #47" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #48" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #49" assertions="1" time="0.07" />
+                      <testcase class="testSerialize with data set #50" assertions="1" time="0.07" />
                   </testsuite>
-                  <testsuite name="Apix\Cache\Serializer\JsonTest::testIsSerialized" tests="2" assertions="8" failures="0" errors="0" time="0.010847">
-                      <testcase name="testIsSerialized with data set #0" assertions="2" time="0.08"/>
-                      <testcase name="testIsSerialized with data set #3" assertions="2" time="0.09"/>
+                  <testsuite class="Apix\Cache\Serializer\JsonTest::testIsSerialized" tests="2" assertions="8" failures="0" errors="0" time="0.010847">
+                      <testcase class="testIsSerialized with data set #0" assertions="2" time="0.08"/>
+                      <testcase class="testIsSerialized with data set #3" assertions="2" time="0.09"/>
                   </testsuite>
               </testsuite>
-              <testsuite name="Apix\Cache\Serializer\StringsetTest" file="/home/pipelines/workspace/src/github.com/vidyar/apix-cache/src/tests/Apix/Cache/Serializer/StringsetTest.php" tests="12" assertions="19" failures="0" errors="0" time="0.091041">
-                  <testsuite name="Apix\Cache\Serializer\StringsetTest::testSerialize" tests="50" assertions="5" failures="0" errors="0" time="0.030966">
-                      <testcase name="testSerialize with data set #1" class="testCase1" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #2" class="testCase2" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #3" class="testCase3" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #4" class="testCase4" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #5" class="testCase5" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #6" class="testCase6" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #7" class="testCase7" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #8" class="testCase8" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #9" class="testCase9" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #10" class="testCase10" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #11" class="testCase11" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #12" class="testCase12" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #13" class="testCase13" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #14" class="testCase14" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #15" class="testCase15" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #16" class="testCase16" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #17" class="testCase17" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #18" class="testCase18" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #19" class="testCase19" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #20" class="testCase20" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #21" class="testCase21" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #22" class="testCase22" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #23" class="testCase23" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #24" class="testCase24" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #25" class="testCase25" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #26" class="testCase26" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #27" class="testCase27" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #28" class="testCase28" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #29" class="testCase29" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #30" class="testCase30" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #31" class="testCase31" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #32" class="testCase32" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #33" class="testCase33" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #34" class="testCase34" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #35" class="testCase35" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #36" class="testCase36" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #37" class="testCase37" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #38" class="testCase38" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #39" class="testCase39" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #40" class="testCase40" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #41" class="testCase41" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #42" class="testCase42" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #43" class="testCase43" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #44" class="testCase44" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #45" class="testCase45" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #46" class="testCase46" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #47" class="testCase47" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #48" class="testCase48" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #49" class="testCase49" assertions="1" time="0.11"/>
-                      <testcase name="testSerialize with data set #50" class="testCase50" assertions="1" time="0.11"/>
-                      <testcase name="testWithCall" class="ServiceContainerTest" file="/home/pipelines/workspace/src/github.com/pipelines/hiro/tests/ServiceContainerTest.php" line="13" assertions="2" time="0.02">
+              <testsuite class="Apix\Cache\Serializer\StringsetTest" file="/home/pipelines/workspace/src/github.com/vidyar/apix-cache/src/tests/Apix/Cache/Serializer/StringsetTest.php" tests="12" assertions="19" failures="0" errors="0" time="0.091041">
+                  <testsuite class="Apix\Cache\Serializer\StringsetTest::testSerialize" tests="50" assertions="5" failures="0" errors="0" time="0.030966">
+                      <testcase class="testSerialize with data set #1" class="testCase1" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #2" class="testCase2" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #3" class="testCase3" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #4" class="testCase4" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #5" class="testCase5" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #6" class="testCase6" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #7" class="testCase7" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #8" class="testCase8" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #9" class="testCase9" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #10" class="testCase10" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #11" class="testCase11" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #12" class="testCase12" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #13" class="testCase13" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #14" class="testCase14" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #15" class="testCase15" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #16" class="testCase16" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #17" class="testCase17" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #18" class="testCase18" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #19" class="testCase19" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #20" class="testCase20" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #21" class="testCase21" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #22" class="testCase22" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #23" class="testCase23" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #24" class="testCase24" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #25" class="testCase25" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #26" class="testCase26" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #27" class="testCase27" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #28" class="testCase28" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #29" class="testCase29" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #30" class="testCase30" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #31" class="testCase31" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #32" class="testCase32" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #33" class="testCase33" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #34" class="testCase34" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #35" class="testCase35" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #36" class="testCase36" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #37" class="testCase37" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #38" class="testCase38" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #39" class="testCase39" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #40" class="testCase40" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #41" class="testCase41" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #42" class="testCase42" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #43" class="testCase43" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #44" class="testCase44" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #45" class="testCase45" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #46" class="testCase46" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #47" class="testCase47" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #48" class="testCase48" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #49" class="testCase49" assertions="1" time="0.11"/>
+                      <testcase class="testSerialize with data set #50" class="testCase50" assertions="1" time="0.11"/>
+                      <testcase class="testWithCall" class="ServiceContainerTest" file="/home/pipelines/workspace/src/github.com/pipelines/hiro/tests/ServiceContainerTest.php" line="13" assertions="2" time="0.02">
                           <failure type="PHPUnit_Framework_ExpectationFailedException">wrongvalue</failure>
                       </testcase>
                   </testsuite>
