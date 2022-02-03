@@ -16,4 +16,4 @@ pipelines:
             - name: myRepoResource
         execution:
           onExecute:
-            - save_tests "$res_myRepoResource_resourcePath/tests/junit/test_results_example_1.xml"
+            - save_tests "$res_myRepoResource_resourcePath/tests/junit/junitv2_success.xml"
