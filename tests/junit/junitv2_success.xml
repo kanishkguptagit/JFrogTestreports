@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite className="DIContainerTests" name="Infor\Hiro\Tests\DIContainerTest" file="/home/pipelines/workspace/src/github.com/vidyar/hiro/tests/DIContainerTest.php" tests="2" assertions="2" failures="0" errors="0" time="0.05">
+  <testsuite class="DIContainerTests" name="Infor\Hiro\Tests\DIContainerTest" file="/home/pipelines/workspace/src/github.com/vidyar/hiro/tests/DIContainerTest.php" tests="2" assertions="2" failures="0" errors="0" time="0.05">
     <testcase name="testWithString" class="Infor\Hiro\Tests\DIContainerTest" file="/home/pipelines/workspace/src/github.com/vidyar/hiro/tests/DIContainerTest.php" line="7" assertions="1" time="0.02"/>
     <testcase name="testWithClosure" class="Infor\Hiro\Tests\DIContainerTest" file="/home/pipelines/workspace/src/github.com/vidyar/hiro/tests/DIContainerTest.php" line="15" assertions="1" time="0.03"/>
   </testsuite>
