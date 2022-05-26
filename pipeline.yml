@@ -3,7 +3,7 @@ resources:
     type: GitRepo
     configuration:
       gitProvider: s_gitHub
-      path: abhishekk012/testelement
+      path: neha-mishraa/testelement
       branches:
         include: master
 pipelines:
