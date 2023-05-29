@@ -6,14 +6,40 @@ resources:
       path: kanishkguptagit/JFrogTestreports
       branches:
         include: master
+
+  - name: myPropertyBag
+    type: PropertyBag
+    configuration:
+      res_myPropertyBag_STEP_ID: value
+
 pipelines:
-  - name: TestElement
+  - name: TestReports
     steps:
-      - name: TestElement_1
+      - name: GenerateReports
         type: Bash
         configuration:
           inputResources:
             - name: myRepoResource
+          outputResources:
+            - name: myPropertyBag
         execution:
           onExecute:
             - save_tests "$res_myRepoResource_resourcePath/tests/junit/test_results_example_1.xml"
+            - write_output myPropertyBag "STEP_ID=${step_id}"
+            
+
+      - name: verifyReports
+        type: Bash
+        configuration:
+          integrations:
+            - name: AdminToken
+          inputResources:
+            - name: myPropertyBag
+          inputSteps:
+            - name: GetReports
+        execution:
+          onExecute:
+            - |
+              curl -o testReportOutput_${res_myPropertyBag_STEP_ID}.txt --location 'https://localhost:8082/pipelines/api/v1/steps/${res_myPropertyBag_STEP_ID}/stepTestReports' --header 'Authorization: Bearer ${int_AdminToken_token}'
+            - ls -la
+            - cat testReportOutput_${res_myPropertyBag_STEP_ID}.txt
