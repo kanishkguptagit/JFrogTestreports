@@ -2,7 +2,7 @@ resources:
   - name: myRepoResource
     type: GitRepo
     configuration:
-      gitProvider: source_github
+      gitProvider: int_github
       path: neha-mishraa/testelement
       branches:
         include: master
