@@ -36,7 +36,7 @@ pipelines:
           inputResources:
             - name: myPropertyBag
           inputSteps:
-            - name: GetReports
+            - name: GenerateReports
         execution:
           onExecute:
             - |
