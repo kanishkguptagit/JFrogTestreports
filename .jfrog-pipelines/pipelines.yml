@@ -39,7 +39,8 @@ pipelines:
             - name: GenerateReports
         execution:
           onExecute:
+            - echo ${pipelines_api_url}
             - |
-              curl -o testReportOutput_${res_myPropertyBag_STEP_ID}.txt --location 'https://localhost:8082/pipelines/api/v1/steps/${res_myPropertyBag_STEP_ID}/stepTestReports' --header 'Authorization: Bearer ${int_AdminToken_token}'
+              curl -o testReportOutput_${res_myPropertyBag_STEP_ID}.txt --location 'https://${pipelines_api_url}/pipelines/api/v1/steps/${res_myPropertyBag_STEP_ID}/stepTestReports' --header 'Authorization: Bearer ${int_AdminToken_token}'
             - ls -la
             - cat testReportOutput_${res_myPropertyBag_STEP_ID}.txt
