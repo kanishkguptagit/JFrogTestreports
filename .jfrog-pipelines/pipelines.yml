@@ -3,7 +3,7 @@ resources:
     type: GitRepo
     configuration:
       gitProvider: int_github
-      path: kanishkguptagit/testelement
+      path: kanishkguptagit/JFrogTestreports
       branches:
         include: master
 pipelines:
