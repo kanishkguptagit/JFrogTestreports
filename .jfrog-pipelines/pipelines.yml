@@ -41,7 +41,7 @@ pipelines:
         execution:
           onExecute:
             - echo "${res_myPropertyBag_STEP_ID}"
-            - echo "${int_PipelinesToken_token}" | jq --raw-output .value"
+            - echo "${int_PipelinesToken_token}" | jq --raw-output .value
             - REQUIRED_TOKEN = ${int_PipelinesToken_token}" | jq --raw-output .value
             - echo "${REQUIRED_TOKEN}"
             - |
