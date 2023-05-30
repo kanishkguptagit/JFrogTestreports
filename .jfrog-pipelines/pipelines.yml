@@ -80,7 +80,7 @@ pipelines:
             - file testReportOutput_${res_myPropertyBag_STEP_ID_INALID_REPORT}.tar.gz
             - cat testReportOutput_${res_myPropertyBag_STEP_ID_INALID_REPORT}.tar.gz
             - |
-              if [ "$(cat check.txt | jq .id)" -eq 4004 ]; then
+              if [ "$(cat testReportOutput_${res_myPropertyBag_STEP_ID_INALID_REPORT}.tar.gz | jq .id)" -eq 4004 ]; then
                 echo "Working as expected"
               else
                 exit 1
