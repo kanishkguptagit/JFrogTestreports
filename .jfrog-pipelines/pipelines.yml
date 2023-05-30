@@ -25,7 +25,7 @@ pipelines:
         execution:
           onExecute:
             - echo "${step_id}"
-            - save_tests "$res_myRepoResource_resourcePath/tests/junit/test_results_example_1.xml"
+            - save_tests "$res_myRepoResource_resourcePath/tests/junit/invalidXML.xml"
             - write_output myPropertyBag "STEP_ID=${step_id}"
             
 
