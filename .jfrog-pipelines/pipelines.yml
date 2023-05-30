@@ -41,9 +41,9 @@ pipelines:
         execution:
           onExecute:
             - echo "${res_myPropertyBag_STEP_ID}"
-            - echo "${int_PipelinesToken_token}"
+            - echo "${int_PipelinesToken_token}" | jq .value
             - |
-              curl -o testReportOutput_${res_myPropertyBag_STEP_ID}.tar.gz --location 'https://master.jfrog-pipelines.com/pipelines/api/v1/steps/${res_myPropertyBag_STEP_ID}/stepTestReports' --header 'Authorization: Bearer ${int_PipelinesToken_token}'
+              curl -o testReportOutput_${res_myPropertyBag_STEP_ID}.tar.gz --location 'https://master.jfrog-pipelines.com/pipelines/api/v1/steps/${res_myPropertyBag_STEP_ID}/stepTestReports' --header 'Authorization: Bearer ${int_PipelinesToken_token} | jq .value'
             - ls -la
             - file testReportOutput_${res_myPropertyBag_STEP_ID}.tar.gz
             - cat testReportOutput_${res_myPropertyBag_STEP_ID}.tar.gz
