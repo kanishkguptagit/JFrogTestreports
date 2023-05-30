@@ -10,10 +10,10 @@ resources:
   - name: myPropertyBag
     type: PropertyBag
     configuration:
-      res_myPropertyBag_STEP_ID: value
+      STEP_ID: value
 
 pipelines:
-  - name: TestReports
+  - name: sanity_TestReports
     steps:
       - name: GenerateReports
         type: Bash
@@ -24,6 +24,7 @@ pipelines:
             - name: myPropertyBag
         execution:
           onExecute:
+            - echo "${step_id}"
             - save_tests "$res_myRepoResource_resourcePath/tests/junit/test_results_example_1.xml"
             - write_output myPropertyBag "STEP_ID=${step_id}"
             
@@ -39,6 +40,7 @@ pipelines:
             - name: GenerateReports
         execution:
           onExecute:
+            - echo "${res_myPropertyBag_STEP_ID}"
             - |
               curl -o testReportOutput_${res_myPropertyBag_STEP_ID}.txt --location 'https://master.jfrog-pipelines.com/pipelines/api/v1/steps/${res_myPropertyBag_STEP_ID}/stepTestReports' --header 'Authorization: Bearer ${int_AdminToken_token}'
             - ls -la
