@@ -45,3 +45,5 @@ pipelines:
               curl -o testReportOutput_${res_myPropertyBag_STEP_ID}.txt --location 'https://master.jfrog-pipelines.com/pipelines/api/v1/steps/${res_myPropertyBag_STEP_ID}/stepTestReports' --header 'Authorization: Bearer ${int_AdminToken_token}'
             - ls -la
             - cat testReportOutput_${res_myPropertyBag_STEP_ID}.txt
+            - tar -xzvf testReportOutput_405.tar.gz
+            - cat tests/testReports/testReport.json
