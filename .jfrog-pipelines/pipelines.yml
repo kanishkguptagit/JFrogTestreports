@@ -42,7 +42,7 @@ pipelines:
           onExecute:
             - echo "${res_myPropertyBag_STEP_ID}"
             - echo "${int_PipelinesToken_token}" | jq --raw-output .value
-            - REQUIRED_TOKEN = ${int_PipelinesToken_token} | jq --raw-output .value
+            - REQUIRED_TOKEN=echo ${int_PipelinesToken_token}|jq --raw-output .value
             - echo "${REQUIRED_TOKEN}"
             - |
               curl -o testReportOutput_${res_myPropertyBag_STEP_ID}.tar.gz --location 'https://master.jfrog-pipelines.com/pipelines/api/v1/steps/${res_myPropertyBag_STEP_ID}/stepTestReports' --header 'Authorization: Bearer ${REQUIRED_TOKEN}'
@@ -51,3 +51,4 @@ pipelines:
             - cat testReportOutput_${res_myPropertyBag_STEP_ID}.tar.gz
             - tar -xzvf testReportOutput_${res_myPropertyBag_STEP_ID}.tar.gz
             - cat tests/testReports/testReport.json
+
