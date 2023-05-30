@@ -42,8 +42,9 @@ pipelines:
           onExecute:
             - echo "${res_myPropertyBag_STEP_ID}"
             - echo "${int_PipelinesToken_token}"
+            - echo "${JFROG_PIPELINES_API_URL}"
             - |
-              curl -o testReportOutput_${res_myPropertyBag_STEP_ID}.tar.gz --location '${pipelines_api_url}/steps/${res_myPropertyBag_STEP_ID}/stepTestReports' --header 'Authorization: Bearer ${int_PipelinesToken_token}'
+              curl -o testReportOutput_${res_myPropertyBag_STEP_ID}.tar.gz --location 'https://stg-repo.jfrog.info/pipelines/api/v1/steps/${res_myPropertyBag_STEP_ID}/stepTestReports' --header 'Authorization: Bearer ${int_PipelinesToken_token}'
             - ls -la
             - file testReportOutput_${res_myPropertyBag_STEP_ID}.tar.gz
             - cat testReportOutput_${res_myPropertyBag_STEP_ID}.tar.gz
