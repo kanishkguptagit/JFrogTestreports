@@ -76,7 +76,7 @@ pipelines:
           onExecute:
             - echo "${res_myPropertyBag_STEP_ID_INALID_REPORT}"
             - |
-              curl -o testReportOutput_${res_myPropertyBag_STEP_ID}.tar.gz --location "${int_sanity_platform_url}/pipelines/api/v1/steps/${res_myPropertyBag_STEP_ID_INALID_REPORT}/stepTestReports" --header "Authorization: Bearer ${int_sanity_platform_accessToken}"
+              curl -o testReportOutput_${res_myPropertyBag_STEP_ID_INALID_REPORT}.tar.gz --location "${int_sanity_platform_url}/pipelines/api/v1/steps/${res_myPropertyBag_STEP_ID_INALID_REPORT}/stepTestReports" --header "Authorization: Bearer ${int_sanity_platform_accessToken}"
             - file testReportOutput_${res_myPropertyBag_STEP_ID_INALID_REPORT}.tar.gz
             - cat testReportOutput_${res_myPropertyBag_STEP_ID_INALID_REPORT}.tar.gz
             - |
