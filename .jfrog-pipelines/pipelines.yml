@@ -41,6 +41,7 @@ pipelines:
         execution:
           onExecute:
             - echo "${res_myPropertyBag_STEP_ID}"
+            - echo "${sanity_platform}"
             - echo "${int_sanity_platform}"
             - echo "${JFROG_PIPELINES_API_URL}"
             - |
