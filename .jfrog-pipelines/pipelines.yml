@@ -41,11 +41,10 @@ pipelines:
         execution:
           onExecute:
             - echo "${res_myPropertyBag_STEP_ID}"
-            - echo "${sanity_platform}"
-            - echo "${int_sanity_platform}"
-            - echo "${JFROG_PIPELINES_API_URL}"
+            - echo "${int_sanity_platform_accessToken}"
+            - echo "${int_sanity_platform_url}"
             - |
-              curl -o testReportOutput_${res_myPropertyBag_STEP_ID}.tar.gz --location 'https://stg-repo.jfrog.info/pipelines/api/v1/steps/${res_myPropertyBag_STEP_ID}/stepTestReports' --header 'Authorization: Bearer ${int_sanity_platform}'
+              curl -o testReportOutput_${res_myPropertyBag_STEP_ID}.tar.gz --location 'https://stg-repo.jfrog.info/pipelines/api/v1/steps/${res_myPropertyBag_STEP_ID}/stepTestReports' --header 'Authorization: Bearer ${int_sanity_platform_accessToken}'
             - ls -la
             - file testReportOutput_${res_myPropertyBag_STEP_ID}.tar.gz
             - cat testReportOutput_${res_myPropertyBag_STEP_ID}.tar.gz
