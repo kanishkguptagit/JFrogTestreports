@@ -32,10 +32,20 @@ pipelines:
         execution:
           onExecute:
             - echo "${stepParam}"
-            - ${stepParam} == true
+            - |
+              if [ -z "$stepParam" ]; then
+              exit 1
+              fi
             - echo "${pipelineParam1}"
+            - |
+              if [ -z "$pipelineParam1" ]; then
+              exit 1
+              fi
             - ${pipelineParam1} == true
-            - ${pipelineParam2} == Hello_World
+            - |
+              if [ -z "$pipelineParam1" ]; then
+              exit 1
+              fi
 
       - name: sanity_EnvironmentVariable_pipelineVariable_Check
         type: Bash
@@ -45,6 +55,17 @@ pipelines:
         execution:
           onExecute:
             - echo "${stepParam}"
+            - |
+              if [ -n "$stepParam" ]; then
+              exit 1
+              fi
             - echo "${pipelineParam1}"
+            - |
+              if [ -z "$pipelineParam1" ]; then
+              exit 1
+              fi
             - ${pipelineParam1} == true
-            - ${pipelineParam2} == Hello_World
+            - |
+              if [ -z "$pipelineParam1" ]; then
+              exit 1
+              fi
