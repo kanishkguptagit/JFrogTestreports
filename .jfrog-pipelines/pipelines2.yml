@@ -67,6 +67,11 @@ pipelines:
               if [ "$pipelineParam2" != "Hello_World" ]; then
               exit 1
               fi
+            - echo "${parentStepIDSet}"
+            - |
+              if [ -z "$parentStepIDSet" ]; then
+              exit 1
+              fi
 
       - name: sanity_EnvironmentVariable_pipelineVariable_Check
         type: Bash
@@ -88,6 +93,11 @@ pipelines:
             - echo "${pipelineParam2}"
             - |
               if [ "$pipelineParam2" != "Hello_World" ]; then
+              exit 1
+              fi
+            - echo "${parentStepIDSet}"
+            - |
+              if [ -z "$parentStepIDSet" ]; then
               exit 1
               fi
 
