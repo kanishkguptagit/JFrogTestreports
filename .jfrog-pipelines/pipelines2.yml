@@ -38,17 +38,17 @@ pipelines:
               fi
             - echo "${nested_run_number}"
             - |
-              if [ -n "$nested_run_number" ]; then
+              if [ -z "$nested_run_number" ]; then
               exit 1
               fi
             - echo "${nested_run_duration_seconds}"
             - |
-              if [ -n "$nested_run_duration_seconds" ]; then
+              if [ -z "$nested_run_duration_seconds" ]; then
               exit 1
               fi
             - echo "${nested_run_url}"
             - |
-              if [ -n "$nested_run_url" ]; then
+              if [ -z "$nested_run_url" ]; then
               exit 1
               fi
 
@@ -118,7 +118,7 @@ pipelines:
               fi
             - echo "${parent_run_id}"
             - |
-              if [ -n "$parent_run_id" ]; then
+              if [ -z "$parent_run_id" ]; then
               exit 1
               fi
             - echo "${parent_run_number}"
@@ -128,6 +128,6 @@ pipelines:
               fi
             - echo "${parent_step_url}"
             - |
-              if [ -n "$parent_step_url" ]; then
+              if [ -z "$parent_step_url" ]; then
               exit 1
               fi
