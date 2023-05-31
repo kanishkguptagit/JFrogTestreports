@@ -1,88 +1,50 @@
-resources:
-  - name: myRepoResource
-    type: GitRepo
-    configuration:
-      gitProvider: int_github
-      path: kanishkguptagit/JFrogTestreports
-      branches:
-        include: master
-
-  - name: myPropertyBag
-    type: PropertyBag
-    configuration:
-      STEP_ID: value
-
 pipelines:
-  - name: sanity_TestReports
+  - name: sanity_TriggerPipeline_Parent
     steps:
-      - name: GenerateValidReports
-        type: Bash
+      - name: Trigger_Pipeline_sanity_check
+        type: TriggerPipeline
         configuration:
-          inputResources:
-            - name: myRepoResource
-          outputResources:
-            - name: myPropertyBag
-        execution:
-          onExecute:
-            - echo "${step_id}"
-            - save_tests "$res_myRepoResource_resourcePath/tests/junit/test_results_example_1.xml"
-            - write_output myPropertyBag "STEP_ID=${step_id}"
-            
-
-      - name: VerifyValidReports
-        type: Bash
-        configuration:
+          pipelineName: sanity_TriggerPipeline_Child
+          stepName: sanity_EnvironmentVariable_stepVariable_Check
           integrations:
             - name: sanity_platform
-          inputResources:
-            - name: myPropertyBag
-          inputSteps:
-            - name: GenerateValidReports
+        
+        execution:
+          onStart:
+            - echo "starting"
+            - set_trigger_payload stepVariables "stepParam=true"
+            - set_trigger_payload pipelineVariables "pipelineParam1=true" "pipelineParam2=Hello_World"
+
+          onSuccess:
+            - echo "Job completed successfully"
+
+          onFailure:
+            - echo "Job failed"
+
+          onComplete:
+            - echo "Parent pipeline execution over"
+
+
+  - name: sanity_TriggerPipeline_Child
+    steps:
+      - name: sanity_EnvironmentVariable_stepVariable_Check
+        type: Bash
         execution:
           onExecute:
-            - echo "${res_myPropertyBag_STEP_ID}"
-            - |
-              curl -o testReportOutput_${res_myPropertyBag_STEP_ID}.tar.gz --location "${int_sanity_platform_url}/pipelines/api/v1/steps/${res_myPropertyBag_STEP_ID}/stepTestReports" --header "Authorization: Bearer ${int_sanity_platform_accessToken}"
-            - file testReportOutput_${res_myPropertyBag_STEP_ID}.tar.gz
-            - cat testReportOutput_${res_myPropertyBag_STEP_ID}.tar.gz
-            - tar -xzvf testReportOutput_${res_myPropertyBag_STEP_ID}.tar.gz
-            - cat tests/testReports/testReport.json
+            - echo "${stepParam}"
+            - ${stepParam} == true
+            - echo "${pipelineParam1}"
+            - ${pipelineParam1} == true
+            - ${pipelineParam2} == Hello_World
 
-
-      - name: GenerateInValidReports
+      - name: sanity_EnvironmentVariable_pipelineVariable_Check
         type: Bash
         configuration:
-          inputResources:
-            - name: myRepoResource
-          outputResources:
-            - name: myPropertyBag
-        execution:
-          onExecute:
-            - echo "${step_id}"
-            - save_tests "$res_myRepoResource_resourcePath/tests/junit/invalidXML.xml"
-            - write_output myPropertyBag "STEP_ID_INALID_REPORT=${step_id}"
-            
-
-      - name: VerifyInValidReports
-        type: Bash
-        configuration:
-          integrations:
-            - name: sanity_platform
-          inputResources:
-            - name: myPropertyBag
           inputSteps:
-            - name: GenerateInValidReports
+            - name: sanity_EnvironmentVariable_stepVariable_Check
         execution:
           onExecute:
-            - echo "${res_myPropertyBag_STEP_ID_INALID_REPORT}"
-            - |
-              curl -o testReportOutput_${res_myPropertyBag_STEP_ID_INALID_REPORT}.tar.gz --location "${int_sanity_platform_url}/pipelines/api/v1/steps/${res_myPropertyBag_STEP_ID_INALID_REPORT}/stepTestReports" --header "Authorization: Bearer ${int_sanity_platform_accessToken}"
-            - file testReportOutput_${res_myPropertyBag_STEP_ID_INALID_REPORT}.tar.gz
-            - cat testReportOutput_${res_myPropertyBag_STEP_ID_INALID_REPORT}.tar.gz
-            - |
-              if [ "$(cat testReportOutput_${res_myPropertyBag_STEP_ID_INALID_REPORT}.tar.gz | jq .id)" -eq 4004 ]; then
-                echo "Working as expected"
-              else
-                exit 1
-              fi
-
+            - echo "${stepParam}"
+            - echo "${pipelineParam1}"
+            - ${pipelineParam1} == true
+            - ${pipelineParam2} == Hello_World
