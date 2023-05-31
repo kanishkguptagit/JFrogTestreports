@@ -1,0 +1,47 @@
+pipelines:
+  - name: sanity_TriggerPipeline_Parent
+    steps:
+      - name: Trigger_Pipeline_sanity_check
+        type: TriggerPipeline
+        configuration:
+          pipelineName: sanity_TriggerPipeline_Child
+          stepName: sanity_EnvironmentVariable_stepVariable_Check
+          integrations:
+            - name: sanity_platform
+        
+        execution:
+          onStart:
+            - echo "starting"
+            - set_trigger_payload stepVariables "stepParam=true"
+            - set_trigger_payload pipelineVariables "pipelineParam1=true" "pipelineParam2=Hello_World"
+
+          onSuccess:
+            - echo "Job completed successfully"
+
+          onFailure:
+            - echo "Job failed"
+
+          onComplete:
+            - echo "Parent pipeline execution over"
+
+
+  - name: sanity_TriggerPipeline_Child
+    steps:
+      - name: sanity_EnvironmentVariable_stepVariable_Check
+        type: Bash
+        execution:
+          onExecute:
+            - echo "${stepParam}"
+            - ${stepParam} == true
+            - echo "${pipelineParam1}"
+            - ${pipelineParam1} == true
+            - ${pipelineParam2} == Hello_World
+
+      - name: sanity_EnvironmentVariable_pipelineVariable_Check
+        type: Bash
+        execution:
+          onExecute:
+            - echo "${stepParam}"
+            - echo "${pipelineParam1}"
+            - ${pipelineParam1} == true
+            - ${pipelineParam2} == Hello_World
