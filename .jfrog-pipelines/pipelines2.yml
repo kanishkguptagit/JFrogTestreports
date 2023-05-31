@@ -17,20 +17,6 @@ pipelines:
 
           onSuccess:
             - echo "Job completed successfully"
-
-          onFailure:
-            - echo "Job failed"
-
-          onComplete:
-            - echo "Parent pipeline execution over"
-
-      - name: ChildEnvironmentVariable_check
-        type: Bash
-        configuration:
-          inputSteps:
-            - name: Trigger_Pipeline_sanity_check
-        execution:
-          onExecute:
             - echo "${nested_run_status}"
             - |
               if [ "$nested_run_status" != "success" ]; then
@@ -51,6 +37,12 @@ pipelines:
               if [ -z "$nested_run_url" ]; then
               exit 1
               fi
+
+          onFailure:
+            - echo "Job failed"
+
+          onComplete:
+            - echo "Parent pipeline execution over"
 
 
 
