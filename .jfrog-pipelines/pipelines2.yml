@@ -33,17 +33,17 @@ pipelines:
           onExecute:
             - echo "${stepParam}"
             - |
-              if [ -z "$stepParam" ]; then
+              if [ "$stepParam" != "true" ]; then
               exit 1
               fi
             - echo "${pipelineParam1}"
             - |
-              if [ -z "$pipelineParam1" ]; then
+              if [ "$pipelineParam1" != "true" ]; then
               exit 1
               fi
-            - ${pipelineParam1} == true
+            - echo "${pipelineParam2}"
             - |
-              if [ -z "$pipelineParam1" ]; then
+              if [ "$pipelineParam1" != "Hello_World" ]; then
               exit 1
               fi
 
@@ -61,11 +61,11 @@ pipelines:
               fi
             - echo "${pipelineParam1}"
             - |
-              if [ -z "$pipelineParam1" ]; then
+              if [ "$pipelineParam1" != "true" ]; then
               exit 1
               fi
-            - ${pipelineParam1} == true
+            - echo "${pipelineParam2}"
             - |
-              if [ -z "$pipelineParam1" ]; then
+              if [ "$pipelineParam2" != "Hello_World" ]; then
               exit 1
               fi
