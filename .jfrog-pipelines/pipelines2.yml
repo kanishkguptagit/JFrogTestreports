@@ -1,5 +1,9 @@
 pipelines:
   - name: sanity_TriggerPipeline_Parent
+    postRun:
+      execution:
+        onComplete: 
+          - echo "Hello World"
     steps:
       - name: Trigger_Pipeline_sanity_check
         type: TriggerPipeline
