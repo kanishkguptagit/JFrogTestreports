@@ -43,7 +43,7 @@ pipelines:
               fi
             - echo "${pipelineParam2}"
             - |
-              if [ "$pipelineParam1" != "Hello_World" ]; then
+              if [ "$pipelineParam2" != "Hello_World" ]; then
               exit 1
               fi
 
