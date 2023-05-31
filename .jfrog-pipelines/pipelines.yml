@@ -14,6 +14,9 @@ resources:
 
 pipelines:
   - name: sanity_TestReports
+    postRun:
+      execution:
+        onComplete: echo "Hello World"
     steps:
       - name: GenerateValidReports
         type: Bash
@@ -85,3 +88,4 @@ pipelines:
               else
                 exit 1
               fi
+
