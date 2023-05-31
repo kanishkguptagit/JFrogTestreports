@@ -39,6 +39,9 @@ pipelines:
 
       - name: sanity_EnvironmentVariable_pipelineVariable_Check
         type: Bash
+        configuration:
+          inputSteps:
+            - name: sanity_EnvironmentVariable_stepVariable_Check
         execution:
           onExecute:
             - echo "${stepParam}"
