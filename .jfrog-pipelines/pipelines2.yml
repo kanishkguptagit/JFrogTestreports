@@ -123,7 +123,7 @@ pipelines:
               fi
             - echo "${parent_run_number}"
             - |
-              if [ -n "$parent_run_number" ]; then
+              if [ -z "$parent_run_number" ]; then
               exit 1
               fi
             - echo "${parent_step_url}"
