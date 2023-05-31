@@ -13,7 +13,7 @@ pipelines:
           onStart:
             - echo "starting"
             - set_trigger_payload stepVariables "stepParam=true"
-            - set_trigger_payload pipelineVariables "pipelineParam1=true" "pipelineParam2=Hello_World"
+            - set_trigger_payload pipelineVariables "pipelineParam1=true" "pipelineParam2=Hello_World" "parentStepIDSet=${step_id}"
 
           onSuccess:
             - echo "Job completed successfully"
@@ -23,6 +23,35 @@ pipelines:
 
           onComplete:
             - echo "Parent pipeline execution over"
+
+      - name: ChildEnvironmentVariable_check
+        type: Bash
+        configuration:
+          inputSteps:
+            - name: Trigger_Pipeline_sanity_check
+        execution:
+          onExecute:
+            - echo "${nested_run_status}"
+            - |
+              if [ "$nested_run_status" != "success" ]; then
+              exit 1
+              fi
+            - echo "${nested_run_number}"
+            - |
+              if [ -n "$nested_run_number" ]; then
+              exit 1
+              fi
+            - echo "${nested_run_duration_seconds}"
+            - |
+              if [ -n "$nested_run_duration_seconds" ]; then
+              exit 1
+              fi
+            - echo "${nested_run_url}"
+            - |
+              if [ -n "$nested_run_url" ]; then
+              exit 1
+              fi
+
 
 
   - name: sanity_TriggerPipeline_Child
@@ -67,5 +96,38 @@ pipelines:
             - echo "${pipelineParam2}"
             - |
               if [ "$pipelineParam2" != "Hello_World" ]; then
+              exit 1
+              fi
+
+      - name: ParentEnvironmentVariable_check
+        type: Bash
+        configuration:
+          inputSteps:
+            - name: sanity_EnvironmentVariable_pipelineVariable_Check
+        execution:
+          onExecute:
+            - echo "${parent_step_id}"
+            - |
+              if [ "$parent_step_id" != "${parentStepIDSet}" ]; then
+              exit 1
+              fi
+            - echo "${parent_step_name}"
+            - |
+              if [ "$parent_step_name" != "Trigger_Pipeline_sanity_check" ]; then
+              exit 1
+              fi
+            - echo "${parent_run_id}"
+            - |
+              if [ -n "$parent_run_id" ]; then
+              exit 1
+              fi
+            - echo "${parent_run_number}"
+            - |
+              if [ -n "$parent_run_number" ]; then
+              exit 1
+              fi
+            - echo "${parent_step_url}"
+            - |
+              if [ -n "$parent_step_url" ]; then
               exit 1
               fi
