@@ -1,3 +1,13 @@
+resources:
+  - name: newVersionBag
+    type: PropertyBag
+    configuration:
+      key: value
+  - name: oldVersionBag
+    type: PropertyBag
+    configuration:
+      key: value
+
 pipelines:
   - name: Sanity_New_Version_Only
     steps:
