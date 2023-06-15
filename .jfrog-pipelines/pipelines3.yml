@@ -1,6 +1,5 @@
-pipelines: 
+pipelines:
   - name: sanity_inputStepStatus
-
     steps:
       - name: success_step
         type: Bash
@@ -41,13 +40,13 @@ pipelines:
       - name: sucess_step_child
         type: Bash
         configuration:
-          inputSteps: 
+          inputSteps:
             - name: success_step
-              status: 
-                - "success"       
+              status:
+                - "success"
         execution:
-          onStart: 
-            -  echo "step that is triggered due to success_step"
+          onStart:
+            - echo "step that is triggered due to success_step"
           onExecute:
             - echo "this step should be success"
           onComplete:
@@ -56,13 +55,13 @@ pipelines:
       - name: failed_step_child
         type: Bash
         configuration:
-          inputSteps: 
+          inputSteps:
             - name: failed_step
-              status: 
+              status:
                 - "failure"
         execution:
-          onStart: 
-            -  echo "step that is triggered due to failed_step"
+          onStart:
+            - echo "step that is triggered due to failed_step"
           onExecute:
             - echo "this step should be success"
           onComplete:
@@ -71,13 +70,13 @@ pipelines:
       - name: timeout_step_child
         type: Bash
         configuration:
-          inputSteps: 
+          inputSteps:
             - name: timeout_step
-              status: 
+              status:
                 - "timeout"
         execution:
-          onStart: 
-            -  echo "step that is triggered due to timeout_step"
+          onStart:
+            - echo "step that is triggered due to timeout_step"
           onExecute:
             - echo "this step should be success"
           onComplete:
@@ -88,10 +87,10 @@ pipelines:
         configuration:
           inputSteps:
             - name: success_step
-              status: 
+              status:
                 - "skipped"
         execution:
-          onStart: 
+          onStart:
             - echo "step that is triggered due to success_step"
           onExecute:
             - echo "this step should be skipped if [success_step] is success"
