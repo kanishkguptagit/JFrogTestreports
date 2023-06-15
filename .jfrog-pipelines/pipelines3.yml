@@ -39,6 +39,7 @@ pipelines:
         type: Bash
         configuration:
           timeoutSeconds: 5
+          allowFailure: true
           inputSteps:
             - name: start_step_status_check
         execution:
@@ -56,7 +57,7 @@ pipelines:
           inputSteps: 
             - name: success_step
               status: 
-                - "success"       
+                - success
         execution:
           onStart: 
             -  echo "step that is triggered due to success_step"
@@ -71,7 +72,7 @@ pipelines:
           inputSteps: 
             - name: failed_step
               status: 
-                - "failure"
+                - failure
         execution:
           onStart: 
             -  echo "step that is triggered due to failed_step"
@@ -86,26 +87,11 @@ pipelines:
           inputSteps: 
             - name: timeout_step
               status: 
-                - "timeout"
+                - timeout
         execution:
           onStart: 
             -  echo "step that is triggered due to timeout_step"
           onExecute:
             - echo "this step should be success"
-          onComplete:
-            - echo "this step is completed"
-
-      - name: skipped_step_child
-        type: Bash
-        configuration:
-          inputSteps:
-            - name: success_step
-              status: 
-                - "skipped"
-        execution:
-          onStart: 
-            - echo "step that is triggered due to success_step"
-          onExecute:
-            - echo "this step should be skipped if [success_step] is success"
           onComplete:
             - echo "this step is completed"
