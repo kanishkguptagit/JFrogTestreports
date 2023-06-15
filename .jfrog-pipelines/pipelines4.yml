@@ -1,21 +1,12 @@
-resources:
-  - name: newVersionBag
-    type: PropertyBag
-    configuration:
-      key: value
-  - name: oldVersionBag
-    type: PropertyBag
-    configuration:
-      key: value
-
 pipelines:
   - name: Sanity_New_Version_Only
     steps:
       - name: Update_Bag_Resource
         type: Bash
         configuration:
-          inputResources:
+          outputResources:
             - name: newVersionBag
+            - name: oldVersionBag
         execution:
           onExecute:
             - write_output newVersionBag "updated=true"
