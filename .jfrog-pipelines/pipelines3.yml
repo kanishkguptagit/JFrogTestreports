@@ -46,7 +46,7 @@ pipelines:
             - echo "starting step that will be going to timeout"
           onExecute:
             - echo "This step will be timedout"
-            - sleep 30s
+            - sleep 30
           onComplete:
             - echo "this should trigger timeout_step_child"
 
