@@ -38,7 +38,7 @@ pipelines:
       - name: timeout_step
         type: Bash
         configuration:
-          timeoutSeconds: 5
+          timeoutSeconds: 10
           inputSteps:
             - name: start_step_status_check
         execution:
@@ -46,7 +46,7 @@ pipelines:
             - echo "starting step that will be going to timeout"
           onExecute:
             - echo "This step will be timedout"
-            - sleep 30
+            - sleep 300
           onComplete:
             - echo "this should trigger timeout_step_child"
 
