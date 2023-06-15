@@ -1,5 +1,5 @@
 pipelines: 
-  - name: sanity_inputStepStatus
+  - name: Sanity_inputStepStatus
     steps:
       - name: start_step_status_check
         type: Bash
