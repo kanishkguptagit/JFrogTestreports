@@ -2,7 +2,7 @@ pipelines:
   - name: sanity_inputStepStatus
 
     steps:
-      - name: sucess_step
+      - name: success_step
         type: Bash
         execution:
           onStart:
@@ -59,7 +59,7 @@ pipelines:
           inputSteps: 
             - name: failed_step
               status: 
-                - "failed"
+                - "failure"
         execution:
           onStart: 
             -  echo "step that is triggered due to failed_step"
