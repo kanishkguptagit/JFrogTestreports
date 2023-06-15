@@ -38,6 +38,7 @@ pipelines:
       - name: timeout_step
         type: Bash
         configuration:
+          allowFailure: true
           timeoutSeconds: 10
           inputSteps:
             - name: start_step_status_check
