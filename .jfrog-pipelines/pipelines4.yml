@@ -1,0 +1,43 @@
+resources:
+  - name: newVersionBag
+    type: PropertyBag
+    configuration:
+      key: value
+  - name: oldVersionBag
+    type: PropertyBag
+    configuration:
+      key: value
+
+pipelines:
+  - name: Sanity_New_Version_Only
+    steps:
+      - name: Update_Bag_Resource
+        type: Bash
+        configuration:
+          inputResources:
+            - name: newVersionBag
+        execution:
+          onExecute:
+            - write_output newVersionBag "updated=true"
+      
+      - name: New_Version_Pipeline
+        type: Bash
+        configuration:
+          inputResources:
+            - name: newVersionBag
+              newVersionOnly: true
+        execution:
+          onExecute:
+            - echo "New Version Pipeline triggered"
+
+      - name: Old_Version_Pipeline
+        type: Bash
+        configuration:
+          inputResources:
+            - name: oldVersionBag
+              newVersionOnly: true
+        execution:
+          onExecute:
+            - echo "Old Version Pipeline is Triggered"
+            - echo "Problem in newVersionOnly"
+            - exit 1
